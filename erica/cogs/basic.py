@@ -21,6 +21,7 @@ class Basic():
         "6": "Yeeee.. NO!",
         "7": "Nope!",
         "8": "Don't know. Don't care."
+        "9": "MI SONO ROTTA I COGLIONI DI DISCORD! BASTA TROIA ALLORAH!"
     }
 
     def __init__(self, bot):
@@ -50,6 +51,8 @@ class Basic():
 
         if "?" not in " ".join(question):
             await self.bot.say("That's not a question, fella!")
+        if "rapidità" in " ".join(question):
+            answer = self.ASK_ANSWERS.get(str(random.randint(9, 9)))
         else:
             answer = self.ASK_ANSWERS.get(str(random.randint(1, len(self.ASK_ANSWERS))))
             await self.bot.say(answer)
